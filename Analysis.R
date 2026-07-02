@@ -33,11 +33,7 @@ coord_names <- c(
 # All remaining variables become observed covariates
 covariates <- setdiff(
   names(dat),
-  c(
-    outcome,
-    treatment,
-    NO2,
-    coord_names
+  c( outcome, treatment, NO2, coord_names
   )
 )
 
