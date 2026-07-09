@@ -33,25 +33,24 @@ estimation: mitigating spatial confounding and interference concomitantly"*
 
 ## Installation
 
-Install the released source from GitHub. The package lives in the `spaci/`
-subdirectory of the repository, so pass `subdir = "spaci"`:
+Install the released source directly from GitHub:
 
 ```r
 # install.packages("remotes")
-remotes::install_github("Ogunsolaia/iDAPS-and-recoverU-", subdir = "spaci")
+remotes::install_github("Ogunsolaia/iDAPS-and-recoverU-")
 ```
 
 Or, equivalently, with **devtools**:
 
 ```r
 # install.packages("devtools")
-devtools::install_github("Ogunsolaia/iDAPS-and-recoverU-", subdir = "spaci")
+devtools::install_github("Ogunsolaia/iDAPS-and-recoverU-")
 ```
 
 To build the vignettes locally as well, add `build_vignettes = TRUE`:
 
 ```r
-remotes::install_github("Ogunsolaia/iDAPS-and-recoverU-", subdir = "spaci",
+remotes::install_github("Ogunsolaia/iDAPS-and-recoverU-",
                         build_vignettes = TRUE)
 ```
 
@@ -60,6 +59,10 @@ Then load it:
 ```r
 library(spaci)
 ```
+
+> If the repository is renamed to `spaci`, the install line becomes
+> `remotes::install_github("Ogunsolaia/spaci")` (GitHub redirects the old URL,
+> so the line above keeps working too).
 
 ### Requirements
 
@@ -72,12 +75,12 @@ library(spaci)
 
 ### Install from a local clone
 
-If you have cloned the repository, install from the package subdirectory:
+If you have cloned the repository, install from its root:
 
 ```r
-remotes::install_local("iDAPS-and-recoverU-/spaci")
+remotes::install_local("iDAPS-and-recoverU-")
 # or, from within R with the working directory at the repo root:
-# devtools::install("spaci")
+# devtools::install()
 ```
 
 ## Worked example
