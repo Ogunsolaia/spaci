@@ -29,19 +29,56 @@ wrapper (`spatial_ate()`) are also provided.
 
 This package accompanies the report *"Unified methods for causal effect
 estimation: mitigating spatial confounding and interference concomitantly"*
-(Ogunsola, Johnson & House).
+(Ogunsola & Johnson).
 
 ## Installation
+
+Install the released source from GitHub. The package lives in the `spaci/`
+subdirectory of the repository, so pass `subdir = "spaci"`:
+
+```r
+# install.packages("remotes")
+remotes::install_github("Ogunsolaia/iDAPS-and-recoverU-", subdir = "spaci")
+```
+
+Or, equivalently, with **devtools**:
 
 ```r
 # install.packages("devtools")
 devtools::install_github("Ogunsolaia/iDAPS-and-recoverU-", subdir = "spaci")
 ```
 
-`spaci` depends only on base R and `stats`. The recoverU family recovers the
-spatial confounder via a self-contained Matérn maximum-likelihood fit; to
-reproduce the report exactly with `geoR`, install `geoR` and pass
-`matern_method = "geoR"`.
+To build the vignettes locally as well, add `build_vignettes = TRUE`:
+
+```r
+remotes::install_github("Ogunsolaia/iDAPS-and-recoverU-", subdir = "spaci",
+                        build_vignettes = TRUE)
+```
+
+Then load it:
+
+```r
+library(spaci)
+```
+
+### Requirements
+
+- **R >= 4.1.0**; the package itself depends only on base R and `stats`, so
+  there is nothing else to install for the core estimators.
+- **Optional:** install `geoR` to reproduce the report's spatial-confounder fit
+  exactly and pass `matern_method = "geoR"`. Without it, `spaci` uses a
+  self-contained Matérn maximum-likelihood fit (`matern_method = "mle"`, the
+  default). `ggplot2` and `readxl` are only needed to build the vignettes.
+
+### Install from a local clone
+
+If you have cloned the repository, install from the package subdirectory:
+
+```r
+remotes::install_local("iDAPS-and-recoverU-/spaci")
+# or, from within R with the working directory at the repo root:
+# devtools::install("spaci")
+```
 
 ## Worked example
 
@@ -134,4 +171,4 @@ data.frame(Method = methods,
 
 ## License
 
-MIT © Isqeel Ogunsola, Olatunji Johnson, Thomas House
+MIT © Isqeel Ogunsola, Olatunji Johnson
