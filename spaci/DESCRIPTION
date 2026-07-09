@@ -4,8 +4,7 @@ Version: 0.1.0
 Authors@R: c(
     person("Isqeel", "Ogunsola", role = c("aut", "cre"),
            email = "isqeel.ogunsola@postgrad.manchester.ac.uk"),
-    person("Olatunji", "Johnson", role = "aut"),
-    person("Thomas", "House", role = "aut"))
+    person("Olatunji", "Johnson", role = "aut"))
 Description: Implements the distance-adjusted propensity score with interference
     (iDAPS) and recoverU+ methods for estimating the average treatment effect on
     the treated (ATT) from spatial observational data in the presence of both
