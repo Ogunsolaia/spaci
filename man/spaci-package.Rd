@@ -38,7 +38,6 @@ Useful links:
 Authors:
 \itemize{
   \item Olatunji Johnson
-  \item Thomas House
 }
 
 }

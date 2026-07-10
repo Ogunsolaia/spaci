@@ -2,6 +2,8 @@
 
 S3method(plot,idaps_fit)
 S3method(print,idaps_fit)
+S3method(print,spaci_bias_bound)
+export(bias_bound)
 export(daps)
 export(idaps)
 export(naive_ps)
