@@ -1,5 +1,12 @@
 # spaci 0.1.0.9000 (development)
 
+* Spatial-dependence-valid inference: `vcov_hac()` (Conley spatial HAC variance
+  for `recoverU()`/`recoverUplus()` fits, with a data-driven bandwidth),
+  `boot_spatial()` (spatial block bootstrap that re-runs the whole pipeline on
+  resampled blocks), and `rand_test()` (conditional randomization test for the
+  sharp null of no direct effect). The default i.i.d. standard error is
+  anticonservative under spatial dependence — these give wider, better-calibrated
+  intervals. `recoverU`/`recoverU+` fits now carry their influence values.
 * The `"mle"` Matérn recovery engine now **fixes the smoothness at `nu = 0.5`
   (exponential) by default**, controlled by the new `matern_nu` argument of
   `recoverU()` / `recoverUplus()`. The free four-parameter fit is poorly
