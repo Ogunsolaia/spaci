@@ -98,7 +98,7 @@ recoverU_core <- function(Y, Z, X, E, coords, d_space_raw,
   infl <- psi / pi_hat - att_hat
   se_hat <- stats::sd(infl, na.rm = TRUE) / sqrt(n_obs)
 
-  list(att = att_hat, se = se_hat, Uhat = Uhat)
+  list(att = att_hat, se = se_hat, Uhat = Uhat, infl = infl)
 }
 
 #' recoverU: doubly robust ATT with a recovered spatial confounder
@@ -140,7 +140,8 @@ recoverU <- function(Y, Z, X, coords, tau = 0.1, normalize = TRUE,
                        include_E_in_PS = FALSE, matern_method = matern_method,
                        matern_nu = matern_nu)
   new_idaps_fit("recoverU", res$att, res$se,
-                extras = list(E = ex$E, Uhat = res$Uhat), level = level)
+                extras = list(E = ex$E, Uhat = res$Uhat, infl = res$infl,
+                              coords = d$coords), level = level)
 }
 
 #' recoverU+: doubly robust ATT under spatial confounding and interference
@@ -172,5 +173,6 @@ recoverUplus <- function(Y, Z, X, coords, tau = 0.1, normalize = TRUE,
                        include_E_in_PS = TRUE, matern_method = matern_method,
                        matern_nu = matern_nu)
   new_idaps_fit("recoverU+", res$att, res$se,
-                extras = list(E = ex$E, Uhat = res$Uhat), level = level)
+                extras = list(E = ex$E, Uhat = res$Uhat, infl = res$infl,
+                              coords = d$coords), level = level)
 }
