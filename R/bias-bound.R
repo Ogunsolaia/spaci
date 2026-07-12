@@ -82,7 +82,11 @@ bias_bound <- function(object, Y, Z, X, coords, tau = 0.1, c_overlap = 1.2,
   rho[!is.finite(rho)] <- 0
   gU <- ph$sigma2 * (1 - rho)
 
-  term_X <- sqrt(sum(th2^2)) * mean(sqrt(rowSums(dX^2)))
+  ## coordinatewise (l1) aggregation: each |theta_k| E|dX_k| is in outcome
+  ## units, so the term is invariant to rescaling individual covariates (the
+  ## Cauchy-Schwarz aggregate is not, and can be vacuous when covariate
+  ## scales are heterogeneous)
+  term_X <- sum(abs(th2) * colMeans(abs(dX)))
   term_E <- abs(th3) * mean(abs(dE))
   term_U <- c_overlap * mean(sqrt(2 * pmax(gU, 0)))
 
