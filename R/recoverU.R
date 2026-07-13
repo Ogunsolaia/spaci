@@ -18,7 +18,8 @@
 #' @param include_E_in_PS Logical; include `E` in the PS and control-outcome
 #'   models (recoverU+ when `TRUE`, recoverU when `FALSE`).
 #' @param matern_method Matern estimation engine, `"mle"` or `"geoR"`.
-#' @return A list with `att`, `se` and `Uhat` (the recovered confounder).
+#' @return A list with `att`, `se`, `Uhat` (the recovered confounder) and `ps`
+#'   (fitted propensity scores from the augmented model).
 #' @keywords internal
 #' @noRd
 recoverU_core <- function(Y, Z, X, E, coords, d_space_raw,
@@ -26,7 +27,8 @@ recoverU_core <- function(Y, Z, X, E, coords, d_space_raw,
                           matern_method = "mle", matern_nu = 0.5) {
   n_obs <- length(Y)
   n1 <- sum(Z == 1)
-  fail <- list(att = NA_real_, se = NA_real_, Uhat = rep(NA_real_, n_obs))
+  fail <- list(att = NA_real_, se = NA_real_, Uhat = rep(NA_real_, n_obs),
+              ps = rep(NA_real_, n_obs))
   if (n1 < 2 || sum(Z == 0) < 2) return(fail)
 
   Xdf <- as.data.frame(X)
@@ -98,7 +100,7 @@ recoverU_core <- function(Y, Z, X, E, coords, d_space_raw,
   infl <- psi / pi_hat - att_hat
   se_hat <- stats::sd(infl, na.rm = TRUE) / sqrt(n_obs)
 
-  list(att = att_hat, se = se_hat, Uhat = Uhat, infl = infl)
+  list(att = att_hat, se = se_hat, Uhat = Uhat, infl = infl, ps = ehat)
 }
 
 #' recoverU: doubly robust ATT with a recovered spatial confounder
@@ -141,7 +143,7 @@ recoverU <- function(Y, Z, X, coords, tau = 0.1, normalize = TRUE,
                        matern_nu = matern_nu)
   new_idaps_fit("recoverU", res$att, res$se,
                 extras = list(E = ex$E, Uhat = res$Uhat, infl = res$infl,
-                              coords = d$coords), level = level)
+                              ps = res$ps, coords = d$coords), level = level)
 }
 
 #' recoverU+: doubly robust ATT under spatial confounding and interference
@@ -174,5 +176,5 @@ recoverUplus <- function(Y, Z, X, coords, tau = 0.1, normalize = TRUE,
                        matern_nu = matern_nu)
   new_idaps_fit("recoverU+", res$att, res$se,
                 extras = list(E = ex$E, Uhat = res$Uhat, infl = res$infl,
-                              coords = d$coords), level = level)
+                              ps = res$ps, coords = d$coords), level = level)
 }
