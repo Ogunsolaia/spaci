@@ -35,7 +35,7 @@ estimation: mitigating spatial confounding and interference concomitantly"*
 
 ```r
 # install.packages("devtools")
-devtools::install_github("Ogunsolaia/spaci", subdir = "spaci")
+devtools::install_github("Ogunsolaia/spaci")
 ```
 
 `spaci` depends only on base R and `stats`. The recoverU family recovers the
