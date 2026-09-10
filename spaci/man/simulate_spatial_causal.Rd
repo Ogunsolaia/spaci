@@ -62,6 +62,6 @@ The Gaussian random field is generated directly from its covariance matrix
 has no external dependency.
 }
 \examples{
-sim <- simulate_spatial_causal(n = 200, seed = 42)
+sim <- simulate_spatial_causal(n = 50, seed = 42)
 str(sim)
 }

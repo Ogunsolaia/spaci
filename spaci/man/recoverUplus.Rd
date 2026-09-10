@@ -46,6 +46,6 @@ and spatial interference simultaneously (Equations 2.10-2.12). Compared with
 control-outcome models.
 }
 \examples{
-sim <- simulate_spatial_causal(n = 150, seed = 1)
+sim <- simulate_spatial_causal(n = 50, seed = 1)
 recoverUplus(sim$Y, sim$Z, sim$X, sim$coords)
 }

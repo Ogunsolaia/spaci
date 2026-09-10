@@ -44,6 +44,6 @@ adjust the propensity-score / control-outcome models for spatial
 interference. Provided as a comparator to \code{\link[=recoverUplus]{recoverUplus()}}.
 }
 \examples{
-sim <- simulate_spatial_causal(n = 150, seed = 1)
+sim <- simulate_spatial_causal(n = 50, seed = 1)
 recoverU(sim$Y, sim$Z, sim$X, sim$coords)
 }

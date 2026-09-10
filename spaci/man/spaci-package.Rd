@@ -27,8 +27,8 @@ and an all-methods wrapper (\code{\link[=spatial_ate]{spatial_ate()}}) are also 
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/Ogunsolaia/iDAPS-and-recoverU-}
-  \item Report bugs at \url{https://github.com/Ogunsolaia/iDAPS-and-recoverU-/issues}
+  \item \url{https://github.com/Ogunsolaia/spaci}
+  \item Report bugs at \url{https://github.com/Ogunsolaia/spaci/issues}
 }
 
 }
@@ -37,6 +37,7 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Isqeel Ogunsola \email{isqeel.ogunsola@postgrad.manchester.ac.uk}
   \item Olatunji Johnson
   \item Thomas House
 }

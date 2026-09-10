@@ -53,6 +53,6 @@ and exposure balance), rather than tuned by hand. Setting \eqn{\pi_3 = 0}
 recovers DAPS and \eqn{\pi_2 = \pi_3 = 0} recovers naive PS.
 }
 \examples{
-sim <- simulate_spatial_causal(n = 150, seed = 1)
+sim <- simulate_spatial_causal(n = 50, seed = 1)
 idaps(sim$Y, sim$Z, sim$X, sim$coords, tau = 0.1)
 }

@@ -28,6 +28,6 @@ estimated propensity scores. This is the baseline that ignores both spatial
 confounding and spatial interference.
 }
 \examples{
-sim <- simulate_spatial_causal(n = 150, seed = 1)
+sim <- simulate_spatial_causal(n = 50, seed = 1)
 naive_ps(sim$Y, sim$Z, sim$X)
 }

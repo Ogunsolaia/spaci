@@ -45,6 +45,6 @@ grid to minimise covariate imbalance in the matched sample
 (Papadogeorgou et al., 2019).
 }
 \examples{
-sim <- simulate_spatial_causal(n = 150, seed = 1)
+sim <- simulate_spatial_causal(n = 50, seed = 1)
 daps(sim$Y, sim$Z, sim$X, sim$coords)
 }
