@@ -30,7 +30,7 @@ set to \code{NA} to omit.}
 
 \item{xlab, main}{Axis label and title.}
 
-\item{...}{Passed to \code{\link[graphics:plot.default]{graphics::plot()}}.}
+\item{...}{Passed to \code{\link[graphics:plot]{graphics::plot()}}.}
 }
 \value{
 The plotted data frame, invisibly.
@@ -42,7 +42,7 @@ the true effect. This reproduces the style of Figure 2.5 of the report and is
 the recommended way to compare methods visually.
 }
 \examples{
-sim <- simulate_spatial_causal(n = 150, seed = 1)
+sim <- simulate_spatial_causal(n = 50, seed = 1)
 res <- spatial_ate(sim$Y, sim$Z, sim$X, sim$coords, seed = 1)
 plot_ate(res, true_att = sim$true_att)
 }
