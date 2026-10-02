@@ -3,7 +3,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-**spaci — SPAtial Causal Inference under confounding and interference.**
+**spaci — SPAtial causal inference under Confounding and Interference.**
 
 `spaci` implements two unified methods for estimating the average treatment
 effect on the treated (ATT) from spatial observational data when **spatial
