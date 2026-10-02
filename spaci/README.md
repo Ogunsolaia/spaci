@@ -27,15 +27,15 @@ The naive PS (`naive_ps()`), DAPS (`daps()`) and recoverU (`recoverU()`)
 comparators, a data simulator (`simulate_spatial_causal()`) and an all-methods
 wrapper (`spatial_ate()`) are also provided.
 
-This package accompanies the report *"Unified methods for causal effect
-estimation: mitigating spatial confounding and interference concomitantly"*
-(Ogunsola, Johnson & House).
+This package accompanies the report *"A unified framework for estimating direct causal effect
+under spatial confounding and interference, with the R package spaci"*
+(Ogunsola and Johnson).
 
 ## Installation
 
 ```r
 # install.packages("devtools")
-devtools::install_github("Ogunsolaia/spaci")
+devtools::install_github("Ogunsolaia/spaci/spaci")
 ```
 
 `spaci` depends only on base R and `stats`. The recoverU family recovers the
