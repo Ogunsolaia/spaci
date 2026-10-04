@@ -17,7 +17,7 @@
 #'
 #' @return An `idaps_fit` object.
 #' @examples
-#' sim <- simulate_spatial_causal(n = 150, seed = 1)
+#' sim <- simulate_spatial_causal(n = 50, seed = 1)
 #' naive_ps(sim$Y, sim$Z, sim$X)
 #' @export
 naive_ps <- function(Y, Z, X, caliper = 0.25, match_method = c("greedy", "optimal"),
@@ -54,7 +54,7 @@ naive_ps <- function(Y, Z, X, caliper = 0.25, match_method = c("greedy", "optima
 #' @return An `idaps_fit` object; the selected \eqn{\alpha} is
 #'   reported in `weights`.
 #' @examples
-#' sim <- simulate_spatial_causal(n = 150, seed = 1)
+#' sim <- simulate_spatial_causal(n = 50, seed = 1)
 #' daps(sim$Y, sim$Z, sim$X, sim$coords)
 #' @export
 daps <- function(Y, Z, X, coords, caliper = 0.25, alpha_grid_step = 0.1,
@@ -113,7 +113,7 @@ daps <- function(Y, Z, X, coords, caliper = 0.25, alpha_grid_step = 0.1,
 #' @return An `idaps_fit` object; the selected weights are
 #'   reported in `weights`.
 #' @examples
-#' sim <- simulate_spatial_causal(n = 150, seed = 1)
+#' sim <- simulate_spatial_causal(n = 50, seed = 1)
 #' idaps(sim$Y, sim$Z, sim$X, sim$coords, tau = 0.1)
 #' @export
 idaps <- function(Y, Z, X, coords, tau = 0.1, caliper = 0.25,

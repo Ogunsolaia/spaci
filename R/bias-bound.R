@@ -34,7 +34,7 @@
 #'   exposure and confounding bound terms (`term_X`, `term_E`, `term_U`), their
 #'   `total`, the mean matched distance, and the fitted variogram parameters.
 #' @examples
-#' sim <- simulate_spatial_causal(n = 150, seed = 1)
+#' sim <- simulate_spatial_causal(n = 50, seed = 1)
 #' fit <- idaps(sim$Y, sim$Z, sim$X, sim$coords, tau = 0.1, seed = 1)
 #' bias_bound(fit, sim$Y, sim$Z, sim$X, sim$coords)
 #' @export

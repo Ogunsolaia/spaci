@@ -1,4 +1,4 @@
-# spaci 0.1.1.9000 (development)
+# spaci 0.2.0
 
 * Spatial-dependence-valid inference: `vcov_hac()` (Conley spatial HAC variance
   for `recoverU()`/`recoverUplus()` fits, with a data-driven bandwidth),
@@ -19,8 +19,17 @@
 * Matching estimators (`idaps()`, `daps()`, `naive_ps()`) gain a
   `match_method` argument: `"greedy"` (default, as before) or `"optimal"`, a
   deterministic 1:1 assignment via `clue::solve_LSAP()` that needs no seed.
+* `boot_spatial()` and `rand_test()` restore the caller's random-number state
+  when `seed` is supplied, as the other estimators already do.
+* Thomas House is no longer listed as a package author.
 
-# idaps 0.1.0
+# spaci 0.1.1
+
+* First CRAN release.
+* `simulate_spatial_causal()` now defaults to `n = 150` (previously 250).
+* Examples run on smaller simulated data sets to keep check times short.
+
+# spaci 0.1.0
 
 * First release. Implements the `idaps()` (distance-adjusted propensity score
   with interference) and `recoverUplus()` (doubly robust with recovered spatial

@@ -1,6 +1,6 @@
 Package: spaci
 Title: Causal Effect Estimation Under Spatial Confounding and Interference
-Version: 0.1.1.9000
+Version: 0.2.0
 Authors@R: c(
     person("Isqeel", "Ogunsola", role = c("aut", "cre"),
            email = "isqeel.ogunsola@postgrad.manchester.ac.uk"),

@@ -58,7 +58,7 @@ carries \eqn{\theta_U^2\,\mathrm{Var}(U)}). The confounding term shrinks as
 the matched distances shrink, so a smaller caliper yields a smaller bound.
 }
 \examples{
-sim <- simulate_spatial_causal(n = 150, seed = 1)
+sim <- simulate_spatial_causal(n = 50, seed = 1)
 fit <- idaps(sim$Y, sim$Z, sim$X, sim$coords, tau = 0.1, seed = 1)
 bias_bound(fit, sim$Y, sim$Z, sim$X, sim$coords)
 }

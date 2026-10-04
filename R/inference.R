@@ -56,7 +56,7 @@ auto_bandwidth <- function(infl, coords, threshold = 0.1) {
 #' @return An object of class `spaci_vcov`: a list with the HAC `variance`, `se`,
 #'   confidence interval `ci`, the `att`, and the `bandwidth`/`kernel` used.
 #' @examples
-#' sim <- simulate_spatial_causal(n = 150, seed = 1)
+#' sim <- simulate_spatial_causal(n = 50, seed = 1)
 #' fit <- recoverUplus(sim$Y, sim$Z, sim$X, sim$coords)
 #' vcov_hac(fit)
 #' @export
@@ -160,7 +160,7 @@ run_estimator <- function(method, Y, Z, X, coords, tau, caliper,
 #' @return An object of class `spaci_boot` with the bootstrap `se`, percentile
 #'   `ci`, point estimate, and the retained resample estimates.
 #' @examples
-#' sim <- simulate_spatial_causal(n = 120, seed = 1)
+#' sim <- simulate_spatial_causal(n = 50, seed = 1)
 #' boot_spatial(sim$Y, sim$Z, sim$X, sim$coords, method = "recoverUplus", B = 50)
 #' @export
 boot_spatial <- function(Y, Z, X, coords,
@@ -172,7 +172,9 @@ boot_spatial <- function(Y, Z, X, coords,
   method <- match.arg(method)
   matern_method <- match.arg(matern_method)
   check_scalars(caliper = caliper, tau = tau, level = level)
-  if (!is.null(seed)) set.seed(seed)
+  if (!is.null(seed)) {
+    old <- .save_seed(); on.exit(.restore_seed(old), add = TRUE); set.seed(seed)
+  }
   d <- validate_inputs(Y, Z, X, coords, require_X = TRUE, require_coords = TRUE)
   Y <- d$Y; Z <- d$Z; X <- d$X; coords <- d$coords
   n <- length(Y)
@@ -266,8 +268,12 @@ print.spaci_boot <- function(x, digits = 4, ...) {
 #' @return An object of class `spaci_randtest` with the observed statistic, the
 #'   p-value and the null draws.
 #' @examples
-#' sim <- simulate_spatial_causal(n = 120, seed = 1)
-#' rand_test(sim$Y, sim$Z, sim$X, sim$coords, method = "recoverUplus", R = 50)
+#' sim <- simulate_spatial_causal(n = 50, seed = 1)
+#' rand_test(sim$Y, sim$Z, sim$X, sim$coords, method = "naive_ps", R = 50)
+#' \donttest{
+#' # refits the full recoverU+ pipeline on every draw, so it is slower
+#' rand_test(sim$Y, sim$Z, sim$X, sim$coords, method = "recoverUplus", R = 20)
+#' }
 #' @export
 rand_test <- function(Y, Z, X, coords,
                       method = c("recoverUplus", "recoverU", "idaps",
@@ -278,7 +284,9 @@ rand_test <- function(Y, Z, X, coords,
   method <- match.arg(method)
   matern_method <- match.arg(matern_method)
   check_scalars(caliper = caliper, tau = tau)
-  if (!is.null(seed)) set.seed(seed)
+  if (!is.null(seed)) {
+    old <- .save_seed(); on.exit(.restore_seed(old), add = TRUE); set.seed(seed)
+  }
   d <- validate_inputs(Y, Z, X, coords, require_X = TRUE, require_coords = TRUE)
   Y <- d$Y; Z <- d$Z; X <- d$X; coords <- d$coords
 

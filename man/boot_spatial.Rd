@@ -52,6 +52,6 @@ pipeline on each resample (recomputing neighbourhood exposures, with a tiny
 coordinate jitter to avoid exact-duplicate ties).
 }
 \examples{
-sim <- simulate_spatial_causal(n = 120, seed = 1)
+sim <- simulate_spatial_causal(n = 50, seed = 1)
 boot_spatial(sim$Y, sim$Z, sim$X, sim$coords, method = "recoverUplus", B = 50)
 }

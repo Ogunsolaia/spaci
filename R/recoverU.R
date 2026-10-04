@@ -126,7 +126,7 @@ recoverU_core <- function(Y, Z, X, E, coords, d_space_raw,
 #'
 #' @return An `idaps_fit` object.
 #' @examples
-#' sim <- simulate_spatial_causal(n = 150, seed = 1)
+#' sim <- simulate_spatial_causal(n = 50, seed = 1)
 #' recoverU(sim$Y, sim$Z, sim$X, sim$coords)
 #' @export
 recoverU <- function(Y, Z, X, coords, tau = 0.1, normalize = TRUE,
@@ -159,7 +159,7 @@ recoverU <- function(Y, Z, X, coords, tau = 0.1, normalize = TRUE,
 #'
 #' @return An `idaps_fit` object.
 #' @examples
-#' sim <- simulate_spatial_causal(n = 150, seed = 1)
+#' sim <- simulate_spatial_causal(n = 50, seed = 1)
 #' recoverUplus(sim$Y, sim$Z, sim$X, sim$coords)
 #' @export
 recoverUplus <- function(Y, Z, X, coords, tau = 0.1, normalize = TRUE,

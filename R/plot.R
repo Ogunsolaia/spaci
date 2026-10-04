@@ -18,7 +18,7 @@
 #'
 #' @return The plotted data frame, invisibly.
 #' @examples
-#' sim <- simulate_spatial_causal(n = 150, seed = 1)
+#' sim <- simulate_spatial_causal(n = 50, seed = 1)
 #' res <- spatial_ate(sim$Y, sim$Z, sim$X, sim$coords, seed = 1)
 #' plot_ate(res, true_att = sim$true_att)
 #' @export

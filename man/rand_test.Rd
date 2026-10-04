@@ -43,6 +43,10 @@ each draw. The two-sided p-value is
 \eqn{(1 + \#\{|\hat\tau^{(r)}| \ge |\hat\tau|\}) / (1 + R)}.
 }
 \examples{
-sim <- simulate_spatial_causal(n = 120, seed = 1)
-rand_test(sim$Y, sim$Z, sim$X, sim$coords, method = "recoverUplus", R = 50)
+sim <- simulate_spatial_causal(n = 50, seed = 1)
+rand_test(sim$Y, sim$Z, sim$X, sim$coords, method = "naive_ps", R = 50)
+\donttest{
+# refits the full recoverU+ pipeline on every draw, so it is slower
+rand_test(sim$Y, sim$Z, sim$X, sim$coords, method = "recoverUplus", R = 20)
+}
 }

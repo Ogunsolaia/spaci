@@ -39,7 +39,7 @@ accounts for spatial correlation of the influence values, which otherwise
 makes intervals too narrow.
 }
 \examples{
-sim <- simulate_spatial_causal(n = 150, seed = 1)
+sim <- simulate_spatial_causal(n = 50, seed = 1)
 fit <- recoverUplus(sim$Y, sim$Z, sim$X, sim$coords)
 vcov_hac(fit)
 }
