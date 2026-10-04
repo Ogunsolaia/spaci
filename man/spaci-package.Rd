@@ -39,6 +39,7 @@ Authors:
 \itemize{
   \item Isqeel Ogunsola \email{isqeel.ogunsola@postgrad.manchester.ac.uk}
   \item Olatunji Johnson
+  \item Thomas House
 }
 
 }

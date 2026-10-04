@@ -21,7 +21,6 @@
   deterministic 1:1 assignment via `clue::solve_LSAP()` that needs no seed.
 * `boot_spatial()` and `rand_test()` restore the caller's random-number state
   when `seed` is supplied, as the other estimators already do.
-* Thomas House is no longer listed as a package author.
 
 # spaci 0.1.1
 

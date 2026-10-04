@@ -11,10 +11,6 @@ This is an update of spaci from 0.1.1 to 0.2.0.
   `clue::solve_LSAP()`. `clue` is in Suggests and is only needed for that option.
 * The default Matérn recovery engine now fixes the smoothness at 0.5
   (`matern_nu`), which avoids boundary estimates on weak residual fields.
-* Thomas House has been removed from the author list.
-
-<!-- TODO before submitting: CRAN may ask about the removed author. Confirm
-     Thomas House agrees, say so in the bullet above, and delete this comment. -->
 
 ## Test environments
 

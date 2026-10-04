@@ -143,4 +143,4 @@ data.frame(Method = methods,
 
 ## License
 
-MIT © Isqeel Ogunsola, Olatunji Johnson
+MIT © Isqeel Ogunsola, Olatunji Johnson, Thomas House
