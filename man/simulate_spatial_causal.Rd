@@ -5,7 +5,7 @@
 \title{Simulate spatial data with confounding and interference}
 \usage{
 simulate_spatial_causal(
-  n = 250,
+  n = 150,
   true_att = 2,
   beta0 = 2.5,
   beta1 = 1,

@@ -27,10 +27,10 @@
 #' @return A list with `Y`, `Z`, `X` (matrix with columns `X1`, `X2`), `coords`,
 #'   the exposure `E`, the latent confounder `U`, and `true_att`.
 #' @examples
-#' sim <- simulate_spatial_causal(n = 200, seed = 42)
+#' sim <- simulate_spatial_causal(n = 50, seed = 42)
 #' str(sim)
 #' @export
-simulate_spatial_causal <- function(n = 250, true_att = 2.0,
+simulate_spatial_causal <- function(n = 150, true_att = 2.0,
                                      beta0 = 2.5, beta1 = 1.0, beta2 = 0.5,
                                      theta_spatial = 0.4,
                                      gamma_interference = 1.5,
@@ -86,7 +86,7 @@ simulate_spatial_causal <- function(n = 250, true_att = 2.0,
 #'   `Lower`, `Upper`), with the fitted objects attached as the `"fits"`
 #'   attribute.
 #' @examples
-#' sim <- simulate_spatial_causal(n = 150, seed = 1)
+#' sim <- simulate_spatial_causal(n = 50, seed = 1)
 #' spatial_ate(sim$Y, sim$Z, sim$X, sim$coords, seed = 1)
 #' @export
 spatial_ate <- function(Y, Z, X, coords, tau = 0.1, caliper = 0.25,
