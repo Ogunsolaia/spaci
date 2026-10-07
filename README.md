@@ -18,7 +18,7 @@ where existing methods that address only one of the two are biased:
   score, not tuned by hand. Setting `π₃ = 0` recovers DAPS and `π₂ = π₃ = 0`
   recovers naive PS.
 - **recoverU+** (`recoverUplus()`) — a **doubly robust** estimator whose
-  propensity-score and control-outcome models are augmented with a *partially
+  propensity score and control outcome models are augmented with a *partially
   recovered spatial confounder* `U_R(s)` (recovered from the residual Matérn
   field by GLS) **and** a neighbourhood-exposure term, so that SC and SI are
   adjusted for simultaneously.
