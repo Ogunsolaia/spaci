@@ -14,8 +14,9 @@ Description: Implements the distance-adjusted propensity score with interference
     neighbourhood-exposure distance. recoverU+ is a doubly robust estimator that
     augments the propensity-score and control-outcome models with a partially
     recovered spatial confounder and a neighbourhood-exposure term. The package
-    also provides the naive propensity score, DAPS and recoverU comparators, and
-    a simulator for the spatial confounding/interference data-generating process.
+    also provides the naive propensity score, DAPS and recoverU comparators,
+    a simulator for the spatial confounding/interference data-generating process 
+    and spatial inference tools 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
