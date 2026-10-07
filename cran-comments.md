@@ -14,10 +14,9 @@ This is an update of spaci from 0.1.1 to 0.2.0.
 
 ## Test environments
 
-* Ubuntu Linux x86_64, R 4.5.2 (local)
+* Windows 11, R 4.6.0
+* Local R CMD check --as-cran
 
-<!-- TODO before submitting: add the maintainer's own results here
-     (e.g. Windows, win-builder R-devel) and delete this comment. -->
 
 ## R CMD check results
 
