@@ -29,7 +29,7 @@ wrapper (`spatial_ate()`) are also provided.
 
 This package accompanies the report *"A unified framework for estimating direct causal effect
 under spatial confounding and interference, with the R package spaci"*
-(Ogunsola and Johnson, 2026).
+(Ogunsola, I. and Johnson, O. 2026).
 
 ## Installation
 
